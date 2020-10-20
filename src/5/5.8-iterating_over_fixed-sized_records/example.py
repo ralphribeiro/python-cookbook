@@ -4,10 +4,14 @@
 # that consist of a 4-digit number followed by a 28-byte string.
 
 from functools import partial
-RECORD_SIZE = 32
+from os.path import abspath, dirname, join
 
-with open('data.bin', 'rb') as f:
+
+RECORD_SIZE = 32
+p = dirname(abspath(__file__))
+
+
+with open(join(p, 'data.bin'), 'rb') as f:
     records = iter(partial(f.read, RECORD_SIZE), b'')
     for r in records:
         print(r)
-
