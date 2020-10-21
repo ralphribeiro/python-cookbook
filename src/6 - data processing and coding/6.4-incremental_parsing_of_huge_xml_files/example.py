@@ -5,7 +5,11 @@
 #
 # https://data.cityofchicago.org/api/views/7as2-ds3y/rows.xml?accessType=DOWNLOAD
 
+from os.path import abspath, dirname, join
 from xml.etree.ElementTree import iterparse
+
+
+p = dirname(abspath(__file__))
 
 def parse_and_remove(filename, path):
     path_parts = path.split('/')
@@ -34,7 +38,7 @@ def parse_and_remove(filename, path):
 from collections import Counter
 potholes_by_zip = Counter()
 
-data = parse_and_remove('potholes.xml', 'row/row')
+data = parse_and_remove(join(p, 'potholes.xml'), 'row/row')
 for pothole in data:
     potholes_by_zip[pothole.findtext('zip')] += 1
 
