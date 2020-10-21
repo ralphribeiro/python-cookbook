@@ -4,14 +4,12 @@
 
 from collections import namedtuple
 import csv
-from os.path import abspath, dirname, join
 
-p = dirname(abspath(__file__))
 
 # (a) Reading as tuples
 
 print('Reading as tuples:')
-with open(join(p, 'stocks.csv')) as f:
+with open('stocks.csv') as f:
     f_csv = csv.reader(f)
     headers = next(f_csv)
     for row in f_csv:
@@ -21,7 +19,7 @@ with open(join(p, 'stocks.csv')) as f:
 # (b) Reading as namedtuples
 
 print('Reading as namedtuples')
-with open(join(p, 'stocks.csv')) as f:
+with open('stocks.csv') as f:
     f_csv = csv.reader(f)
     Row = namedtuple('Row', next(f_csv))
     for r in f_csv:
@@ -33,7 +31,7 @@ with open(join(p, 'stocks.csv')) as f:
 # (c) Reading as dictionaries
 
 print('Reading as dicts')
-with open(join(p, 'stocks.csv')) as f:
+with open('stocks.csv') as f:
     f_csv = csv.DictReader(f)
     for row in f_csv:
         # process row
@@ -44,7 +42,7 @@ with open(join(p, 'stocks.csv')) as f:
 print('Reading into named tuples with type conversion')
 
 col_types = [str, float, str, str, float, int]
-with open(join(p, 'stocks.csv')) as f:
+with open('stocks.csv') as f:
     f_csv = csv.reader(f)
     headers = next(f_csv)
     for row in f_csv:
@@ -60,7 +58,7 @@ field_types = [('Price', float),
                ('Change', float),
                ('Volume', int)]
 
-with open(join(p, 'stocks.csv')) as f:
+with open('stocks.csv') as f:
     for row in csv.DictReader(f):
         row.update((key, conversion(row[key]))
                    for key, conversion in field_types)
