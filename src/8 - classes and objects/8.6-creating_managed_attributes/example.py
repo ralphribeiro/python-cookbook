@@ -16,12 +16,13 @@ class Person:
             raise TypeError('Expected a string')
         self._first_name = value
 
+
 if __name__ == '__main__':
-   a = Person('Guido')
-   print(a.first_name)
-   a.first_name = 'Dave'
-   print(a.first_name)
-   try:
-       a.first_name = 42
-   except TypeError as e:
-       print(e)
+    a = Person('Guido')
+    print(a.first_name)
+    a.first_name = 'Dave'
+    print(a.first_name)
+    try:
+        a.first_name = 42
+    except TypeError as e:
+        print(e)
