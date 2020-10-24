@@ -50,11 +50,11 @@ class SubPerson3(Person):
         return super().name
 
 if __name__ == '__main__':
-   a = Person('Guido')
-   print(a.name)
-   a.name = 'Dave'
-   print(a.name)
-   try:
-       a.name = 42
-   except TypeError as e:
-       print(e)
+    a = Person('Guido')
+    print(a.name)
+    a.name = 'Dave'
+    print(a.name)
+    try:
+        a.name = 42
+    except TypeError as e:
+        print(e)
