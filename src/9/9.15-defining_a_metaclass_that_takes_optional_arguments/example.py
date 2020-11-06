@@ -18,6 +18,7 @@ class MyMeta(type):
 
 # Examples
 class A(metaclass=MyMeta, debug=True, synchronize=True):
+    print(super().__dict__['debug'])
     pass
 
 class B(metaclass=MyMeta):
