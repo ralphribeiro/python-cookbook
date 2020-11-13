@@ -2,3 +2,4 @@ poetry.lock
 .vscode
 pyproject.toml
 pylama.ini
+rascunhos
