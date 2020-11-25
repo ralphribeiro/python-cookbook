@@ -3,3 +3,5 @@ poetry.lock
 pyproject.toml
 pylama.ini
 rascunhos
+src/15 - C extensions/libsample.so
+__pycache__/
